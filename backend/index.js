@@ -14,10 +14,13 @@ app.get('/', (req, res) => {
 });
 
 app.use(bodyParse.json());
-app.use(cors({
-  origin: 'https://mern-auth-frontend-phi.vercel.app', 
-  credentials: true
-}));
+const corsOptions = {
+  origin: ['https://mern-auth-frontend-phi.vercel.app'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH'],
+};
+
+app.use(cors(corsOptions));
 
 app.use('/auth', AuthRouter);
 
