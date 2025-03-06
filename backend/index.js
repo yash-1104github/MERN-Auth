@@ -5,7 +5,6 @@ const cors = require('cors');
 const AuthRouter = require('./Routes/AuthRouter');
  
 require('dotenv').config();
-
 require('./Models/db'); 
 
 const port = process.env.PORT || 8080;
@@ -15,7 +14,10 @@ app.get('/', (req, res) => {
 });
 
 app.use(bodyParse.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://mern-auth-frontend-phi.vercel.app', 
+  credentials: true
+}));
 
 app.use('/auth', AuthRouter);
 
