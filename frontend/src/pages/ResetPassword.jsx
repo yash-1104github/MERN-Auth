@@ -21,8 +21,8 @@ const ResetPassword = () => {
             return handleError('email and password are required');
         }
         try {
-            // const url = "http://localhost:8080/auth/resetpassword";
-            const url = `https://mern-auth-api-woad.vercel.app/auth/resetpassword`;
+            //  const url = "http://localhost:8080/auth/resetpassword";
+             const url = `https://mern-auth-api-woad.vercel.app/auth/resetpassword`;
 
             const response = await fetch(url, {
                 method: 'PATCH',

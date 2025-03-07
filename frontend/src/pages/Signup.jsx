@@ -26,8 +26,8 @@ const Signup = () => {
             return handleError('All fields are required');
         }
         try {
-            // const url = "http://localhost:8080/auth/signup";
-            const url = `https://mern-auth-api-woad.vercel.app/auth/signup`;
+            //  const url = "http://localhost:8080/auth/signup";
+             const url = `https://mern-auth-api-woad.vercel.app/auth/signup`;
 
             const response = await fetch(url, {
                 method: 'POST',

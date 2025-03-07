@@ -14,14 +14,15 @@ app.get('/', (req, res) => {
 });
 
 app.use(bodyParse.json());
-const corsOptions = {
-  origin: ['https://mern-auth-frontend-phi.vercel.app'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH'],
-};
+// const corsOptions = {
+//   origin: ['https://mern-auth-frontend-phi.vercel.app'],
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'PATCH'],
+// };
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
+app.use(cors());
 app.use('/auth', AuthRouter);
 
 app.listen(port, () => {
